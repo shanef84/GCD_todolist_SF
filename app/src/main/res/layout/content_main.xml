@@ -12,8 +12,20 @@
     tools:context="com.example.forbess.gcd_todolist_sf.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/lv_mainlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/et_new_strings"
+        />
+    <EditText
+        android:id="@id/et_new_strings"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentBottom="true"
+        android:inputType="text"
+        android:hint="@string/et_hint"
+        />
+
+
 </RelativeLayout>
