@@ -16,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         et_new_strings = (EditText) findViewById(R.id.et_new_strings);
         //generate an array list
         al_items = new ArrayList<CustomItem>();
-        //create array adapter for al_strings & set it on the listview
+        //create array adapter for al_items & set it on the listview
         caa = new CustomArrayAdapter(this, al_items);
         lv_mainlist.setAdapter(caa);
 
@@ -79,7 +80,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
+        // add in a listener that listens for long clicks on our list items
+        lv_mainlist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            // overridden method that we must implement to get access to long clicks
+            public boolean onItemLongClick(AdapterView<?> adapterview, View view, int pos, long id) {
+                // update the display with what we have just long clicked
+                al_items.remove(pos);
+                caa.notifyDataSetChanged();
+                Snackbar.make(view, "Item Deleted", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                // as we are going to change the textview anyway we can automatically
+                // return true;
+                return true;
+            }
+        });
     }
 
     @Override
