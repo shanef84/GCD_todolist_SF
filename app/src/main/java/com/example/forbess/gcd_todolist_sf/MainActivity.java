@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -54,8 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 // the array list. this then notifies the adapter that the data has
                 // changed and that the list view needs to be updated
                 if (actionid == EditorInfo.IME_ACTION_DONE) {
-                    al_items.add(new
-                            CustomItem(et_new_strings.getText().toString(), false));
+                    al_items.add(new CustomItem(et_new_strings.getText().toString(), false));
                     caa.notifyDataSetChanged();
                     Snackbar.make(view, "New todo Item added", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     et_new_strings.setText("");
@@ -72,10 +72,14 @@ public class MainActivity extends AppCompatActivity {
         fab_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                al_items.add(new CustomItem(et_new_strings.getText().toString(), false));
+                caa.notifyDataSetChanged();
                 Snackbar.make(view, "New todo Item added", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                et_new_strings.setText("");
             }
         });
+
+        
     }
 
     @Override
