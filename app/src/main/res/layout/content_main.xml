@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorIndigo"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.forbess.gcd_todolist_sf.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -17,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/et_new_strings"
+        android:backgroundTint="@color/colorNew"
         />
     <EditText
         android:id="@id/et_new_strings"

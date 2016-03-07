@@ -12,10 +12,22 @@ public class CustomItem {
         this.checkbox = status;
 
     }
+    //Getter and Setter
+    public String getName() {
+        return name;
+    }
 
-    // getter methods for both fields
-    public String getName() { return name; }
-    public boolean isCheckbox() { return checkbox; }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isCheckbox() {
+        return checkbox;
+    }
+
+    public void setCheckbox(boolean checkbox) {
+        this.checkbox = checkbox;
+    }
     // private fields of the class
     private String name;
     private boolean checkbox;

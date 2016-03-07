@@ -1,5 +1,5 @@
 package com.example.forbess.gcd_todolist_sf;
-
+//Shane Forbes 2857127
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 // update the display with what we have just long clicked
                 al_items.remove(pos);
                 caa.notifyDataSetChanged();
-                Snackbar.make(view, "Item Deleted", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(view, "Item " + pos + " Deleted", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 // as we are going to change the textview anyway we can automatically
                 // return true;
                 return true;
